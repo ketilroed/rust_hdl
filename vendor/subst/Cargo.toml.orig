@@ -1,0 +1,50 @@
+[package]
+name = "subst"
+description = "shell-like variable substitution"
+version = "0.3.8"
+license = "BSD-2-Clause OR Apache-2.0"
+repository = "https://github.com/fizyr/subst"
+documentation = "https://docs.rs/subst"
+readme = "README.md"
+publish = ["crates-io"]
+
+keywords = ["substitution", "expansion", "variable", "parameter", "shell"]
+categories = ["template-engine", "value-formatting"]
+
+edition = "2021"
+
+[features]
+# Implement `VariableMap` for `indexmap::IndexMap`.
+indexmap = ["dep:indexmap"]
+
+# Enable support for performing substitution in all string values of a JSON document.
+json = ["dep:serde", "dep:serde_json"]
+
+# Enable support for performing substitution in all string values of a TOML document.
+toml = ["dep:serde", "dep:toml"]
+
+# Enable support for performing substitution in all string values of a YAML document.
+yaml = ["dep:serde", "dep:serde_yaml"]
+
+# Preserve the order of fields in JSON objects and TOML tables (YAML always preserves the order).
+preserve-order = ["toml?/preserve_order", "serde_json?/preserve_order"]
+
+# Enable #[doc(cfg...)] annotations for optional parts of the library (requires a nightly compiler).
+doc-cfg = []
+
+[dependencies]
+indexmap = { version = "2.5.0", optional = true }
+memchr = "2.4.1"
+serde = { version = "1.0.0", optional = true }
+serde_json = { version = "1.0.118", optional = true }
+serde_yaml = { version = "0.9.34", optional = true }
+toml = { version = "0.8.14", optional = true }
+unicode-width = "0.1.9"
+
+[dev-dependencies]
+assert2 = "0.3.6"
+subst = { path = ".", features = ["json", "toml", "yaml"] }
+serde = { version = "1.0.0", features = ["derive"] }
+
+[package.metadata.docs.rs]
+all-features = true

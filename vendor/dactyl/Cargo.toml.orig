@@ -1,0 +1,87 @@
+[package]
+name = "dactyl"
+version = "0.12.0"
+authors = ["Josh Stoik <josh@blobfolio.com>"]
+edition = "2024"
+rust-version = "1.87"
+description = "A small library to quickly stringify integers with basic formatting."
+license = "WTFPL"
+repository = "https://github.com/Blobfolio/dactyl"
+readme = "README.md"
+keywords = [ "integer", "printing", "formatting" ]
+exclude = [
+	".github",
+	".gitignore",
+	".righteous-sandbox.json",
+	"doc",
+	"justfile",
+	"release",
+]
+
+[package.metadata.docs.rs]
+default-target = "x86_64-unknown-linux-gnu"
+
+[package.metadata.bashman]
+name = "Dactyl"
+
+[dev-dependencies]
+brunch = "0.10.*"
+fastrand = "2"
+num-format = "0.4.*"
+
+[[bench]]
+name = "fn_btoi"
+harness = false
+
+[[bench]]
+name = "fn_btou"
+harness = false
+
+[[bench]]
+name = "fn_htou"
+harness = false
+
+[[bench]]
+name = "fn_nice_elapsed"
+harness = false
+
+[[bench]]
+name = "fn_nice_float"
+harness = false
+
+[[bench]]
+name = "fn_nice_percent"
+harness = false
+
+[[bench]]
+name = "fn_nice_u8"
+harness = false
+
+[[bench]]
+name = "fn_nice_u16"
+harness = false
+
+[[bench]]
+name = "fn_nice_u32"
+harness = false
+
+[[bench]]
+name = "fn_nice_u64"
+harness = false
+
+[[bench]]
+name = "fn_nice_replace"
+harness = false
+
+[[bench]]
+name = "fn_nohash"
+harness = false
+
+[[bench]]
+name = "fn_saturating_from_u8"
+harness = false
+
+[profile.bench]
+lto = false
+codegen-units = 1
+opt-level = 3

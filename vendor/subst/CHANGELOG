@@ -1,0 +1,50 @@
+# Version 0.3.8 - 2025-05-09
+- [fix][minor] Fix out-of-bounds read when input string ends with a dollar sign.
+
+# Version 0.3.7 - 2024-12-13
+- [fix][minor] Fix violation of aliasing rules in `TemplateBuf` and `ByteTemplateBuf`.
+
+# Version 0.3.6 - 2024-12-13
+- [fix][minor] Fix unsound `Clone` and `Drop` implementation of `TemplateBuf` and `ByteTemplateBuf`.
+
+# Version 0.3.5 - 2024-09-15
+- [change][patch] Update README for new feature flags.
+
+# Version 0.3.4 - 2024-09-15
+- [add][minor] Add optional support for the `indexmap` crate.
+
+# Version 0.3.3 - 2024-06-29
+- [add][minor] Add support for substitution in all string values of TOML data.
+- [add][minor] Add support for substitution in all string values of JSON data.
+
+# Version 0.3.2 - 2024-06-25
+- [add][minor] Allow re-use of parsed templates with `Template`, `TemplateBuf`, `ByteTemplate` and `ByteTemplateBuf`.
+
+# Version 0.3.1 - 2024-06-09
+- [fix][minor] Fix recursive substitution in braced default values.
+
+# Version 0.3.0 - 2023-08-31
+- [add][minor] Expose error details publically.
+- [fix][minor] Fix panic when processing multibyte UTF-8 escape sequence.
+- [change][major] Require a valid UTF-8 `&str` for `Error::print_source_highlighting()`.
+
+# Version 0.2.3 - 2023-07-26
+- [add][minor] Support unsized `VariableMap` objects, such as `&dyn VariableMap`.
+
+# Version 0.2.2 - 2022-09-19
+- [change][minor] Have `NoSubstitution` return an uninhibated `NeverType` as value.
+
+# Version 0.2.1 - 2022-09-19
+- [add][minor] Add a `NoSubstitution` map to allow disabling substitution in generic code.
+
+# Version 0.2.0 - 2022-09-19
+- [change][major] Update `serde_yaml` to version `0.9`.
+
+# Version 0.1.2 - 2022-03-03
+- [change][minor] Remove use of new features to be compatible with older Rust versions.
+
+# Version 0.1.1 - 2022-03-01
+- [add][minor] Add support for substitution in all string values of YAML data.
+
+# Version 0.1.0 - 2022-02-22
+- [add][major] Initial release.
